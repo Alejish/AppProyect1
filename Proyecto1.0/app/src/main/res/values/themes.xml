@@ -2,11 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.StartupApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#1BA0DC</item>
+        <item name="colorPrimary">@color/orange_accent</item>
         <item name="colorPrimaryVariant">@color/orange</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#012535</item>
+        <item name="colorSecondary">@color/grey_light</item>
         <item name="colorSecondaryVariant">@color/grey</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->

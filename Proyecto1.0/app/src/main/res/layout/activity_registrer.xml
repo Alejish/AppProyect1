@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrerActivity">
+    tools:context=".activities.RegistrerActivity">
 
     <LinearLayout
         android:id="@+id/loginPrincipal"
@@ -36,8 +36,8 @@
             android:id="@+id/nombreField"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="15sp"
+            android:layout_height="59dp"
+            android:layout_marginTop="30sp"
             android:hint="Nombre"
             app:errorEnabled="true">
 
@@ -47,17 +47,12 @@
                 android:layout_height="54dp"
                 android:inputType="textPersonName" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="8dp"
-                android:layout_weight="1" />
-
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/apellidoField"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="59dp"
             android:hint="Apellido"
             app:errorEnabled="true">
 
@@ -67,17 +62,12 @@
                 android:layout_height="54dp"
                 android:inputType="textPersonName" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="12dp"
-                android:layout_weight="1" />
-
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailField"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="59dp"
             android:hint="Email"
             app:errorEnabled="true">
 
@@ -92,7 +82,7 @@
             android:id="@+id/telField"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="59dp"
             android:hint="Telefono"
             app:errorEnabled="true">
 
@@ -108,7 +98,7 @@
             android:id="@+id/passField"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="59dp"
             android:hint="Password"
             app:errorEnabled="true">
 
@@ -123,7 +113,7 @@
             android:id="@+id/confpassField"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="59dp"
             android:hint="Confirmar Password"
             app:errorEnabled="true">
 

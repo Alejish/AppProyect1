@@ -1,4 +1,4 @@
-package com.mov.startupapp
+package com.mov.startupapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,17 +6,22 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
 import com.mov.startupapp.databinding.ActivityRegistrerBinding
+import com.mov.startupapp.models.ResponseHttp
+import com.mov.startupapp.models.User
+import com.mov.startupapp.providers.UsersProvider
+import com.mov.startupapp.utils.SharePref
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RegistrerActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityRegistrerBinding
-    // conexion a la bd en firebase
-    private val db = FirebaseFirestore.getInstance()
+    var usersProvider = UsersProvider()
+    val TAG = "RegistrerActivity"
 
+    private lateinit var binding: ActivityRegistrerBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistrerBinding.inflate(layoutInflater)
@@ -39,47 +44,55 @@ class RegistrerActivity : AppCompatActivity() {
         val conf_pass = binding.confPassTxt.text.toString()
 
         if(isValidateForm(email, password, name, lastname, phone, conf_pass)){
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).addOnCompleteListener(){
-                if(it.isSuccessful) {
-                    showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
-                }else{
-                    showAlert()
-                }
-            }
-        }else{
-            Toast.makeText(this, "Registro no válido", Toast.LENGTH_LONG).show()
-        }
-
-        if(isValidateForm(email, password, name, lastname, phone, conf_pass)){
-            db.collection("users").document(email).set(
-                hashMapOf("Nombre" to name,
-                    "Apellido" to lastname,
-                    "Telefono" to phone,
-                    "Contraseña" to password)
+            val user = User(
+                name = name,
+                lastname = lastname,
+                email = email,
+                phone = phone,
+                password = password
             )
+            usersProvider.register(user)?.enqueue(object :Callback<ResponseHttp>{
+                override fun onResponse(
+                    call: Call<ResponseHttp>,
+                    response: Response<ResponseHttp>
+                ) {
+                    if(response.body()?.isSuccess == true){
+                        saveUserInSession(response.body()?.data.toString())
+                        goToHome()
+
+                    }
+                    Toast.makeText(this@RegistrerActivity, response.body()?.message, Toast.LENGTH_LONG).show()
+                    Log.d(TAG, "Response: ${response}")
+                    Log.d(TAG, "Body: ${response.body()}")
+
+                }
+
+                override fun onFailure(call: Call<ResponseHttp>, t: Throwable) {
+                    Log.d(TAG, "se produjo un error ${t.message}")
+                    Toast.makeText(this@RegistrerActivity, "Se produjo un error ${t.message}", Toast.LENGTH_LONG).show()
+                }
+
+            })
         }else{
-            Toast.makeText(this, "Registro no válido", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "No es válido", Toast.LENGTH_LONG).show()
         }
 
     }
-    //enviar un mensaje de error cuando no se autentifique bien el usuario
-    private fun showAlert(){
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Se ha producido un error autenticando al usuario")
-        builder.setPositiveButton("Aceptar", null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
+
+    private fun goToHome(){
+        val i = Intent(this, SaveImageActivity::class.java)
+        i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // eliminar le historial de pantallas
+        startActivity(i)
     }
 
-    // si es correcto pasa a la nueva entity
-    private fun showHome(email: String, providerType: ProviderType){
-        val homeIntent = Intent(this, MainActivity::class.java).apply {
-            putExtra("email", email)
-            putExtra("provider", providerType.name)
-        }
-        startActivity(homeIntent)
+    private fun saveUserInSession(data: String) {
+
+        val sharedPref = SharePref(this)
+        val gson = Gson()
+        val user = gson.fromJson(data, User::class.java)
+        sharedPref.save("user", user)
     }
+
 
     fun String.isEmailValid(): Boolean{
         return  !TextUtils.isEmpty(this) && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
@@ -121,4 +134,5 @@ class RegistrerActivity : AppCompatActivity() {
         }
         return true
     }
+
 }

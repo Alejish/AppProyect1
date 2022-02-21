@@ -3,14 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/user/AndroidStudioProjects/Proyecto1.0/app/src/main/res/layout/activity_home.xml" value="0.18229166666666666" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Proyecto1.0/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Proyecto1.0/app/src/main/res/layout/activity_registrer.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/edittext_custom.xml" value="0.175" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/ic_arrow.xml" value="0.175" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/ic_person.xml" value="0.1984375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/rounded_button.xml" value="0.175" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/activity_home.xml" value="0.1490036231884058" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/activity_registrer.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/activity_save_image.xml" value="0.14356884057971014" />
       </map>
     </option>
   </component>
