@@ -5,12 +5,21 @@
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/edittext_custom.xml" value="0.175" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/ic_arrow.xml" value="0.175" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/ic_home.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/ic_pedidos.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/ic_person.xml" value="0.1984375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/ic_person_pin.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/drawable/rounded_button.xml" value="0.175" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/activity_home.xml" value="0.1490036231884058" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/activity_home.xml" value="0.2401263823064771" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/activity_profile_update.xml" value="0.14628623188405798" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/activity_registrer.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/activity_save_image.xml" value="0.14356884057971014" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/fragment_client_categories.xml" value="0.14628623188405798" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/fragment_client_orders.xml" value="0.14628623188405798" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/layout/fragment_client_profile.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/menu/bottom_navigation_menu_client.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/startupApp/app/src/main/res/menu/botton_navegation_menu_client.xml" value="0.18229166666666666" />
       </map>
     </option>
   </component>

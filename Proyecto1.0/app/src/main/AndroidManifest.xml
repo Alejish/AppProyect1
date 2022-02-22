@@ -7,9 +7,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"
-                     tools:ignore = "ScopedStorage"/>
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
@@ -20,11 +20,11 @@
         android:theme="@style/Theme.StartupApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.ProfileUpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.SaveImageActivity"
-            android:exported="false" >
-
-        </activity>
-
+            android:exported="false"></activity>
         <activity
             android:name=".activities.HomeActivity"
             android:exported="false" />
@@ -39,7 +39,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
