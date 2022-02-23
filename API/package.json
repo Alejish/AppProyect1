@@ -1,0 +1,33 @@
+{
+  "name": "start_up",
+  "version": "1.0.0",
+  "description": "aplicacion movil para emprendedores",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flutter",
+    "emprendedor",
+    "nodejs"
+  ],
+  "author": "Mata_Morales",
+  "license": "MIT",
+  "dependencies": {
+    "@firebase/database-compat": "^0.1.5",
+    "@google-cloud/storage": "^5.18.2",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "firebase-admin": "^10.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "passport": "^0.5.2",
+    "passport-jwt": "^4.0.0",
+    "pg-promise": "^10.11.1",
+    "util": "^0.12.4"
+  }
+}
